@@ -75,7 +75,7 @@ if (empty($age)) {
 }
 
 if (empty($email)) {
-    echo "Number's not valid";
+    echo "Email is not valid";
 } else {
     echo "Your email is $email";
 }
