@@ -34,7 +34,7 @@ if (isset($_POST["login"])) {
     echo "You're {$age} years of age";
 }
 
-#For Email. Removes characters not part of email.
+#For email. Removes characters not part of email.
 if (isset($_POST["login"])) {
     $name = filter_input(INPUT_POST, "age", FILTER_SANITIZE_EMAIL);
     echo "You're {$age} years of age";
