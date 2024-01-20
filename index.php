@@ -22,14 +22,20 @@
 // echo "Hi {$name}";
 // }
 
-//Prevent malicious attacks
+//Prevent malicious attacks. turns html into text
 if (isset($_POST["login"])) {
     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
     echo "Hi {$name}";
 }
 
-//For number input
+//For number input. removes characters that aren't numbers
 if (isset($_POST["login"])) {
     $name = filter_input(INPUT_POST, "age", FILTER_SANITIZE_NUMBER_INT);
+    echo "You're {$age} years of age";
+}
+
+#For Email. Removes characters not part of email.
+if (isset($_POST["login"])) {
+    $name = filter_input(INPUT_POST, "age", FILTER_SANITIZE_EMAIL);
     echo "You're {$age} years of age";
 }
