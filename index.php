@@ -30,6 +30,6 @@ if (isset($_POST["login"])) {
 
 //For number input
 if (isset($_POST["login"])) {
-    $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_NUMBER_INT);
-    echo "Hi {$name}";
+    $name = filter_input(INPUT_POST, "age", FILTER_SANITIZE_NUMBER_INT);
+    echo "You're {$age} years of age";
 }
