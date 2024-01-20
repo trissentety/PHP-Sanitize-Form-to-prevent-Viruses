@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +5,10 @@
 </head>
 
 <body>
-    <form action="index.php" method="post">name:<br>
-        <input type="text" name="name"><br>
+    <form action="index.php" method="post"><br>
+        <input type="text" name="name">Name<br>
+        <input type="text" name="age">Age<br>
+        <input type="email" name="email">Email<br>
         <input type="submit" name="login" value="Login">
     </form>
 </body>
@@ -39,3 +38,45 @@ if (isset($_POST["login"])) {
     $name = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
     echo "{$email} is your email";
 }
+
+//Using filter to validate to invalidate unproper field text.
+if (isset($_POST["login"])) {
+    $age = filter_input(INPUT_POST, "age", FILTER_VALIDATE_INT);
+
+    $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+}
+
+if(empty($age)) {
+    echo "Number's not valid"
+}
+else {
+    echo"Your age is $age"; 
+}
+
+if(empty($email)) {
+    echo "Number's not valid"
+}
+else {
+    echo"Your age is $age"; 
+}
+
+
+//Using filter to validate to invalidate unproper field text.
+if (isset($_POST["login"])) {
+    $age = filter_input(INPUT_POST, "age", FILTER_VALIDATE_INT);
+
+    $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+}
+
+if (empty($age)) {
+    echo "Number's not valid";
+} else {
+    echo "Your age is $age";
+}
+
+if (empty($email)) {
+    echo "Number's not valid";
+} else {
+    echo "Your age is $age";
+}
+
